@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>ブログアプリ</h1>
+    <a href="{{ url_for('create')}}">新規作成</a>
+    <a href="{{ url_for('logout')}}">ログアウト</a>
+    {% for post in posts %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <a href="/{{post.id}}/update" role="button">編集</a>
+        <a href="/{{post.id}}/delete" role="button">削除</a>
+        <p>投稿日時： {{ post.created_at }}  </p>
+        <p>{{ post.body }}</p>
+    </article>
+    {% endfor %}
+{% endblock %}

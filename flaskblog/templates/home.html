@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>ブログアプリ</h1>
+    登録済みなら
+    <a href="{{ url_for('login')}}">ログイン</a>
+    <br>未登録なら
+    <a href="{{ url_for('signup')}}">登録</a>
+{% endblock %}
